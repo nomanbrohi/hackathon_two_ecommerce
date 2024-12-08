@@ -5,7 +5,7 @@ export default function Section() {
   return (
     <>
       {/* New Arrival Section */}
-      <section className='flex w-full justify-center border-b-2 py-24'>
+      <section className='flex w-full justify-center border-b-2 py-10'>
         <div className='centerProductsDiv h-[673px] w-[1240px]'>
           <div>
             <h1 className='heading'>New arrivals</h1>
@@ -55,7 +55,7 @@ export default function Section() {
       </section>
 
       {/* Top Selling Section */}
-      <section className='flex w-full justify-center pt-24'>
+      <section className='flex w-full justify-center py-10'>
         <div className='centerProductsDiv h-[673px] w-[1240px]'>
           <div>
             <h1 className='heading'>top selling</h1>
@@ -105,7 +105,7 @@ export default function Section() {
       </section>
 
       {/* Browse by dress style Section */}
-      <section className='flex w-full justify-center border-b-2 py-24'>
+      <section className='flex w-full justify-center border-b-2 py-10'>
         <div className='h-[866px] w-[1240px] rounded-3xl bg-[#f0f0f0] shadow-md shadow-slate-500 flex flex-col items-center justify-evenly'>
           <div>
             <h1 className='heading'>browse by dress style</h1>
