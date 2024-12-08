@@ -1,9 +1,11 @@
+import Hero from "./component/hero"
+import Section from "./component/homeSection/section"
+
 export default function Home(){
   return(
     <>
-      <section className="container">
-        <h1>Home page</h1>
-      </section>
+      <Hero/>
+      <Section/>
     </>
   )
 }
