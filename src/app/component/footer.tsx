@@ -43,7 +43,7 @@ export default function Footer() {
             <div className='flex h-[177px] w-[248px] flex-col justify-between'>
               <h1 className='text-[33px] font-extrabold uppercase'>shop.co</h1>
               <p className='text-sm opacity-60'>
-                We have clothes that suits your style and which you're proud to
+                We have clothes that suits your style and which you`&apos;`re proud to
                 wear. From women to men
               </p>
               <div className='flex gap-3'>

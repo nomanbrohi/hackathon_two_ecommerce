@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductProps> = ({
   oldPrice,
 }) => {
   return (
-    <div className="w-[295px] rounded-md hover:shadow-lg transition duration-300">
+    <div className="w-[295px] m-auto rounded-md hover:shadow-lg transition duration-300">
       {/* Product Image */}
       <Image
         src={image}

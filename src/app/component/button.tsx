@@ -6,7 +6,7 @@ interface propTypes{
 const Btn = (props:propTypes) =>{
     const {name, classname} = props;
     return(
-        <button className={`w-[210px] h-[52px] bg-black rounded-full ${classname}`}>{name}</button>
+        <button className={`md:w-[210px] h-[52px] text-base bg-black rounded-full ${classname}`}>{name}</button>
     )
 }
 
