@@ -1,5 +1,12 @@
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+'use client';
+
+import { useRef } from 'react';
 import FeedbackCard from '@/app/component/feedbackCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const feedbacks = [
   {
@@ -23,27 +30,60 @@ const feedbacks = [
 ];
 
 const CustomerFeedback = () => {
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+
   return (
-    <section className="my-20 w-[1240px] h-[338px] m-auto">
+    <section className="my-20 md:w-[1240px] w-[358px] h-[auto] m-auto">
       {/* Section Header */}
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-5xl font-bold uppercase">Our Happy Customers</h2>
+        <h2 className="md:text-5xl text-4xl font-extrabold uppercase">Our Happy Customers</h2>
         <div className="flex space-x-4">
-          <button className="p-2 rounded-full hover:bg-gray-300">
-            <FaArrowLeft />
+          <button
+            ref={prevRef}
+            aria-label="Previous"
+            className="p-2 rounded-full bg-white shadow-md hover:bg-gray-300 transition-transform transform hover:scale-110"
+          >
+            <FaArrowLeft className="text-xl text-black" />
           </button>
-          <button className="p-2 rounded-full hover:bg-gray-300">
-            <FaArrowRight />
+          <button
+            ref={nextRef}
+            aria-label="Next"
+            className="p-2 rounded-full bg-white shadow-md hover:bg-gray-300 transition-transform transform hover:scale-110"
+          >
+            <FaArrowRight className="text-xl text-black" />
           </button>
         </div>
       </div>
 
-      {/* Feedback Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Feedback Cards with Swiper */}
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onInit={(swiper) => {
+          if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.update();
+          }
+        }}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+      >
         {feedbacks.map(({ id, rating, name, feedback }) => (
-          <FeedbackCard key={id} rating={rating} name={name} feedback={feedback} />
+          <SwiperSlide key={id}>
+            <FeedbackCard rating={rating} name={name} feedback={feedback} />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </section>
   );
 };

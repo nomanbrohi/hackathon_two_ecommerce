@@ -22,7 +22,7 @@ export default function Hero() {
                 garments, designed to bring out your individuality and cater to
                 your sense of style
               </p>
-              <Btn name='Shop Now' classname='text-white w-[358px]' />
+              <Btn name='Shop Now' classname='text-white w-[358px] hover:bg-white hover:text-black transition duration-500' />
             </div>
             <div className='w-full flex items-center flex-col gap-3 pt-4 md:hidden'>
               <div className='flex justify-between w-[278px] '>
