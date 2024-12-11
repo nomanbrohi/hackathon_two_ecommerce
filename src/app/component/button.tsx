@@ -1,13 +1,22 @@
-interface propTypes{
-    name:string
-    classname?: string
+import clsx from "clsx";
+
+interface propTypes {
+  name: string;
+  classname?: string;
 }
 
-const Btn = (props:propTypes) =>{
-    const {name, classname} = props;
-    return(
-        <button className={`md:w-[210px] w-[360px] h-[52px] text-base bg-black rounded-full  ${classname}`}>{name}</button>
-    )
-}
+const Btn = (props: propTypes) => {
+  const { name, classname } = props;
+  return (
+    <button
+      className={clsx(
+        "md:w-[210px] w-[360px] md:h-[52px] text-base bg-black rounded-full",
+        classname
+      )}
+    >
+      {name}
+    </button>
+  );
+};
 
-export default Btn
+export default Btn;

@@ -1,4 +1,8 @@
+'use client';
+
 import Image from 'next/image';
+
+// import { useRouter } from 'next/navigation'
 
 interface ProductProps {
   name: string;
@@ -19,8 +23,15 @@ const ProductCard: React.FC<ProductProps> = ({
   discount,
   oldPrice,
 }) => {
+  // const router = useRouter()
+
+  // const handleClick = () => {
+  //   router.push(`/product/@{id}`)
+  // }
   return (
-    <div className="w-[295px] m-auto rounded-md hover:shadow-lg transition duration-300">
+    <div
+    // onClick={handleClick}
+    className="w-[295px] m-auto rounded-md hover:shadow-lg transition duration-300">
       {/* Product Image */}
       <Image
         src={image}

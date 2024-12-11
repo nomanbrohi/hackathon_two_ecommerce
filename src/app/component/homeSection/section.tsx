@@ -96,7 +96,7 @@ export default function Section() {
       {/* Top Selling Section */}
       <SwiperSlideContext.Provider value={{ currentSlide, setCurrentSlide }}>
         <section className='flex w-full justify-center py-10'>
-          <div className='centerProductsDiv h-[673px] w-[1240px]'>
+          <div className='centerProductsDiv h-[673px] md:w-[1240px] w-full'>
             <div>
               <h1 className='heading'>Top Selling</h1>
             </div>

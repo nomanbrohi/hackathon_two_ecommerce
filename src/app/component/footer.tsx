@@ -33,7 +33,7 @@ export default function Footer() {
                 </div>
                 <Btn
                   name='Subscribe to Newsletter'
-                  classname='md:w-[349px] w-[311px] md:h-[46px] h-[42px] bg-white hover:bg-black hover:text-white transition duration-500 border-2 border-white'
+                  classname='md:w-[349px] max-w-[311px] md:h-[46px] max-h-[42px] bg-white hover:bg-black hover:text-white transition duration-500 border-2 border-white'
                 />
               </form>
             </div>

@@ -1,14 +1,17 @@
 import { FaStar, FaCheckCircle } from 'react-icons/fa';
+import clsx from "clsx";
 
 interface FeedbackCardProps {
   rating: number;
   name: string;
   feedback: string;
+  classname?: string;
+
 }
 
-const FeedbackCard = ({ rating, name, feedback }: FeedbackCardProps) => {
+const FeedbackCard = ({ rating, name, feedback,classname }: FeedbackCardProps) => {
   return (
-    <div className="p-6 border md:w-[400px] md:h-[240px] w-full h-[200px] rounded-3xl shadow-md bg-white hover:shadow-lg transition duration-300">
+    <div className={clsx("p-6 border md:w-[400px] md:h-[240px] w-full h-[200px] rounded-3xl shadow-md bg-white hover:shadow-lg transition duration-300", classname)}>
       {/* Star Rating */}
       <div className="flex space-x-3 mb-2">
         {Array.from({ length: 5 }, (_, index) => (

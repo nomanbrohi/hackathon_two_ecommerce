@@ -22,7 +22,7 @@ export default function Hero() {
                 garments, designed to bring out your individuality and cater to
                 your sense of style
               </p>
-              <Btn name='Shop Now' classname='text-white w-[358px] hover:bg-white hover:text-black transition duration-500' />
+              <Btn name='Shop Now' classname='md:m-0 m-auto text-white w-[90%] hover:bg-white hover:text-black transition duration-500' />
             </div>
             <div className='w-full flex items-center flex-col gap-3 pt-4 md:hidden'>
               <div className='flex justify-between w-[278px] '>
@@ -53,14 +53,14 @@ export default function Hero() {
                 alt=''
                 width={44}
                 height={44}
-                className='absolute left-10 bottom-[130px]'
+                className='absolute left-6 bottom-[-75%]'
               />
               <Image
                 src='/images/Vector.png'
                 alt=''
                 width={76}
                 height={76}
-                className='absolute right-10 bottom-[180px]'
+                className='absolute right-6 bottom-[-61%]'
               />
             </div>
             <div className='hidden md:block'>
