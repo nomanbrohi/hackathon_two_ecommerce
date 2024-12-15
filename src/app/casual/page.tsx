@@ -27,7 +27,7 @@ const useSwiperSlide = () => {
   return useContext(SwiperSlideContext)
 }
 
-export default function casual() {
+export default function Casual() {
   const [currentSlide, setCurrentSlide] = useState<number>(0)
   return (
     <>

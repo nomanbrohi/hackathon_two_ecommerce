@@ -17,9 +17,9 @@ const useSwiperSlide = () => {
   return useContext(SwiperSlideContext)
 }
 
-export default function product() {
-
+export default function Product() {
   const [currentSlide, setCurrentSlide] = useState<number>(0)
+
   return (
     <>
       <ProductDetails
