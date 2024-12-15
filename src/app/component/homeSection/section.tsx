@@ -9,6 +9,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { createContext, useContext, useState } from 'react'
+import Link from 'next/link'
 
 // Create the context to hold the state for the current slide
 const SwiperSlideContext = createContext<any>(null)
@@ -42,6 +43,7 @@ export default function Section() {
               className='w-full md:w-[1240px]'
             >
               <SwiperSlide>
+                <Link href='./product' className='cursor-pointer'>
                 <ProductCard
                   name='T-Shirt with Tape Details'
                   image='/images/productNewArrival/blackT.png'
@@ -51,9 +53,11 @@ export default function Section() {
                   discount=''
                   oldPrice=''
                 />
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
-                <ProductCard
+              <Link href='./product' className='cursor-pointer'>
+                  <ProductCard
                   name='Skinny Fit Jeans'
                   image='/images/productNewArrival/bluePant.png'
                   rating={3.5}
@@ -62,8 +66,10 @@ export default function Section() {
                   discount='$20'
                   oldPrice='$260'
                 />
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
+              <Link href='./product' className='cursor-pointer'>
                 <ProductCard
                   name='Checkered Shirt'
                   image='/images/productNewArrival/shirt.png'
@@ -73,8 +79,10 @@ export default function Section() {
                   discount='$80.00'
                   oldPrice='$100.00'
                 />
+              </Link>
               </SwiperSlide>
               <SwiperSlide>
+              <Link href='./product' className='cursor-pointer'>
                 <ProductCard
                   name='Sleeve Striped T-Shirt'
                   image='/images/productNewArrival/orangeT.png'
@@ -84,6 +92,7 @@ export default function Section() {
                   discount='$80.00'
                   oldPrice='$100.00'
                 />
+                </Link>
               </SwiperSlide>
             </Swiper>
             <div className='mt-4 text-center'>
@@ -172,6 +181,7 @@ export default function Section() {
           </div>
           <div className='flex flex-col md:gap-6 gap-5'>
             <div className='flex flex-col gap-6 md:flex-row md:gap-5'>
+              <Link href='./casual'>
               <div className='relative h-[190px] w-[310px] overflow-hidden rounded-2xl bg-white transition duration-300 hover:shadow-lg md:h-[289px] md:w-[407px] md:overflow-auto'>
                 <h1 className='absolute left-4 top-4 z-10 text-2xl font-bold md:left-8 md:top-10 md:text-4xl md:font-medium'>
                   Casual
@@ -184,6 +194,7 @@ export default function Section() {
                   className='absolute h-[190px] w-[572px] rounded-2xl md:h-[289px] md:w-[407px]'
                 />
               </div>
+              </Link>
               <div className='relative h-[190px] w-[310px] overflow-hidden rounded-2xl bg-white transition duration-300 hover:shadow-lg md:h-[289px] md:w-[684px] md:overflow-auto'>
                 <h1 className='absolute left-4 top-4 z-10 text-2xl font-bold md:left-8 md:top-10 md:text-4xl md:font-medium'>
                   Formal

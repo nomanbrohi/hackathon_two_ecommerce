@@ -2,14 +2,14 @@
 
 import ProductDetails from '@/app/component/productDetail'
 import { SlidersHorizontal } from 'lucide-react'
-import Btn from '../button'
+import Btn from '../component/button'
 import CustomerFeedbackProduct from '@/app/component/customerFeedbackProduct'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { createContext, useContext, useState } from 'react'
-import ProductCard from '../homeSection/productCard'
+import ProductCard from '../component/homeSection/productCard'
 
 const SwiperSlideContext = createContext<any>(null)
 
