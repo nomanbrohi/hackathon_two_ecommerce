@@ -33,13 +33,13 @@ export default function Footer() {
                 </div>
                 <Btn
                   name='Subscribe to Newsletter'
-                  classname='md:w-[349px] max-w-[311px] md:h-[46px] max-h-[42px] bg-white hover:bg-black hover:text-white transition duration-500 border-2 border-white'
+                  classname='md:w-[349px] w-[311px] md:h-[46px] h-[42px] bg-white hover:bg-black hover:text-white transition duration-500 border-2 border-white'
                 />
               </form>
             </div>
           </div>
 
-          <div className='m-auto flex h-[590px] w-full flex-col justify-between border-b-2 md:h-[227px] md:w-[1240px] md:flex-row md:py-0 py-6'>
+          <div className='m-auto flex h-[590px] md:px-0 px-5 w-full flex-col justify-between border-b-2 md:h-[227px] md:w-[1240px] md:flex-row md:py-0 py-6'>
             <div className='flex h-[200px] w-full flex-col md:justify-between justify-center gap-3 md:h-[177px] md:w-[488px] pr-20 md:gap-0'>
               <h1 className='text-[33px] font-extrabold uppercase'>shop.co</h1>
               <p className='text-sm opacity-60'>

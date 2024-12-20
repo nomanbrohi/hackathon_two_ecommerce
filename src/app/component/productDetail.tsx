@@ -130,13 +130,13 @@ const ProductDetails: React.FC<ProductProps> = ({
           <div className="flex items-center ">
             <Btn
               name="-"
-              classname="md:w-[56.6px] w-[36.6px] h-[40px] bg-gray-200 text-black rounded-e-lg hover:bg-black hover:text-white transition duration-500"
+              classname="md:w-[56.6px] w-[36px] h-[40px] bg-gray-200 text-black rounded-e-lg hover:bg-black hover:text-white transition duration-500"
               aria-label="Decrease quantity"
             />
-            <p className="md:w-[56.6px] w-[36.6px] md:h-[52px] h-[40px] bg-gray-200 text-center text-lg flex items-center justify-center">1</p>
+            <p className="md:w-[56.6px] w-[36px] md:h-[52px] h-[40px] bg-gray-200 text-center text-lg flex items-center justify-center">1</p>
             <Btn
               name="+"
-              classname="md:w-[56.6px] w-[36.6px] h-[40px] bg-gray-200 text-black rounded-s-xl hover:bg-black hover:text-white transition duration-500"
+              classname="md:w-[56.6px] w-[36px] h-[40px] bg-gray-200 text-black rounded-s-xl hover:bg-black hover:text-white transition duration-500"
               aria-label="Increase quantity"
             />
           </div>

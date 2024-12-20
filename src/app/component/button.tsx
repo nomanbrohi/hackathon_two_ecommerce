@@ -10,7 +10,7 @@ const Btn = (props: propTypes) => {
   return (
     <button
       className={clsx(
-        "md:w-[210px] w-[360px] md:h-[52px] text-base bg-black rounded-full",
+        "md:w-[210px] xl:w-[360px] md:h-[52px] text-base bg-black rounded-full",
         classname
       )}
     >

@@ -25,7 +25,7 @@ export default function Navbar() {
               <SheetHeader>
                 <SheetTitle>
                   <nav>
-                    <ul className='mt-10 flex flex-col gap-8 text-3xl'>
+                    <ul className='mt-8 flex flex-col gap-6 text-xl'>
                       <Link href='/'>Shops</Link>
                       <Link href='/#'>On Sale</Link>
                       <Link href='/about'>New Arrival</Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
 
           <div className='flex md:w-[508px] items-center justify-between'>
             <div className=''>
-              <h1 className='text-[32px] font-extrabold uppercase'>shop.co</h1>
+              <Link href='/' className='text-[32px] font-extrabold uppercase'>shop.co</Link>
             </div>
 
             <div className='hidden md:block'>

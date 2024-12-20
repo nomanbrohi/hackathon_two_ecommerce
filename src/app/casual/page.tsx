@@ -39,7 +39,7 @@ export default function Casual() {
         {/* main box */}
         <div className='flex w-full'>
           {/* left side Filtration Box main box */}
-          <div className='hidden md:block h-[1220px] w-[295px] rounded-3xl border-2'>
+          <div className='hidden h-[1220px] w-[295px] rounded-3xl border-2 md:block'>
             <div className='m-auto h-full w-[247px]'>
               {/* filter option */}
               <div className='flex h-[51px] items-center justify-between border-b-2'>
@@ -168,11 +168,11 @@ export default function Casual() {
           <div className='flex h-[1447px] w-full flex-col justify-between md:w-[926px]'>
             <div className='flex h-[43px] w-full items-center justify-between gap-1 md:gap-0 md:px-2'>
               <h1 className='text-2xl font-bold md:text-[32px]'>Casual</h1>
-              <div className='flex w-[274px] items-center justify-between gap-2'>
+              <div className='flex md:[375px] w-[274px] items-center justify-between gap-2'>
                 <p className='text-sm'>Showing 1-10 of 100 Products</p>
                 <p className='hidden md:block'>Sort by: Most Popular</p>
 
-                <Popover >
+                <Popover>
                   <PopoverTrigger className='md:hidden'>
                     <div className='flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#f0f0f0] md:h-[48px] md:w-[48px]'>
                       <SlidersHorizontal
@@ -185,130 +185,134 @@ export default function Casual() {
                   </PopoverTrigger>
                   <PopoverContent className='w-[22.5rem]'>
                     {/* left side Filtration Box main box */}
-          <div className='md:hidden block h-[1220px] w-full rounded-3xl border-2'>
-            <div className='m-auto h-full w-[247px]'>
-              {/* filter option */}
-              <div className='flex h-[51px] items-center justify-between border-b-2'>
-                <h1>Filter</h1>
-                <SlidersHorizontal size={28} color='#000000' strokeWidth={1} />
-              </div>
-              {/* left menu */}
-              <div className='flex h-[208px] justify-between border-b-2'>
-                <div className='flex flex-col justify-evenly'>
-                  <Link href='#'>T-Shirts</Link>
-                  <Link href='#'>Shorts</Link>
-                  <Link href='#'>Shirts</Link>
-                  <Link href='#'>Hoodeis</Link>
-                  <Link href='#'>Jeans</Link>
-                </div>
-                <div className='flex flex-col justify-evenly'>
-                  <ChevronRight strokeWidth={1} />
-                  <ChevronRight strokeWidth={1} />
-                  <ChevronRight strokeWidth={1} />
-                  <ChevronRight strokeWidth={1} />
-                  <ChevronRight strokeWidth={1} />
-                </div>
-              </div>
-              {/* price filter */}
-              <div className='flex h-[114px] w-full flex-col items-center justify-evenly border-b-2'>
-                <div className='flex w-full items-center justify-between'>
-                  <h1>price</h1>
-                  <ChevronUp strokeWidth={1} />
-                </div>
-                <div>
-                  <input
-                    type='range'
-                    min='0'
-                    max='500' // Maximum price, adjust as needed
-                    step='10'
-                    className='w-full cursor-pointer'
-                  />
-                </div>
-              </div>
-              {/* Color filter */}
-              <div className='flex h-[161px] w-full items-center border-b-2'>
-                <div className='flex h-[137px] w-full flex-col justify-between'>
-                  <div className='flex w-full items-center justify-between'>
-                    <h1>Colors</h1>
-                    <ChevronUp strokeWidth={1} />
-                  </div>
-                  <div className='grid w-full grid-cols-5 place-content-between gap-y-4'>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#00C12B]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#F50606]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#F5DD06]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#F57906]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#06CAF5]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#063AF5]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#7D06F5]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#F506A4]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full border-[1px] bg-[#FFFFFF]'></div>
-                    <div className='h-[37px] w-[37px] rounded-full bg-[#000000]'></div>
-                  </div>
-                </div>
-              </div>
+                    <div className='block h-[1220px] w-full rounded-3xl border-2 md:hidden'>
+                      <div className='m-auto h-full w-[247px]'>
+                        {/* filter option */}
+                        <div className='flex h-[51px] items-center justify-between border-b-2'>
+                          <h1>Filter</h1>
+                          <SlidersHorizontal
+                            size={28}
+                            color='#000000'
+                            strokeWidth={1}
+                          />
+                        </div>
+                        {/* left menu */}
+                        <div className='flex h-[208px] justify-between border-b-2'>
+                          <div className='flex flex-col justify-evenly'>
+                            <Link href='#'>T-Shirts</Link>
+                            <Link href='#'>Shorts</Link>
+                            <Link href='#'>Shirts</Link>
+                            <Link href='#'>Hoodeis</Link>
+                            <Link href='#'>Jeans</Link>
+                          </div>
+                          <div className='flex flex-col justify-evenly'>
+                            <ChevronRight strokeWidth={1} />
+                            <ChevronRight strokeWidth={1} />
+                            <ChevronRight strokeWidth={1} />
+                            <ChevronRight strokeWidth={1} />
+                            <ChevronRight strokeWidth={1} />
+                          </div>
+                        </div>
+                        {/* price filter */}
+                        <div className='flex h-[114px] w-full flex-col items-center justify-evenly border-b-2'>
+                          <div className='flex w-full items-center justify-between'>
+                            <h1>price</h1>
+                            <ChevronUp strokeWidth={1} />
+                          </div>
+                          <div>
+                            <input
+                              type='range'
+                              min='0'
+                              max='500' // Maximum price, adjust as needed
+                              step='10'
+                              className='w-full cursor-pointer'
+                            />
+                          </div>
+                        </div>
+                        {/* Color filter */}
+                        <div className='flex h-[161px] w-full items-center border-b-2'>
+                          <div className='flex h-[137px] w-full flex-col justify-between'>
+                            <div className='flex w-full items-center justify-between'>
+                              <h1>Colors</h1>
+                              <ChevronUp strokeWidth={1} />
+                            </div>
+                            <div className='grid w-full grid-cols-5 place-content-between gap-y-4'>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#00C12B]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#F50606]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#F5DD06]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#F57906]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#06CAF5]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#063AF5]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#7D06F5]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#F506A4]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full border-[1px] bg-[#FFFFFF]'></div>
+                              <div className='h-[37px] w-[37px] rounded-full bg-[#000000]'></div>
+                            </div>
+                          </div>
+                        </div>
 
-              {/* Size filtration */}
-              <div className='flex h-auto gap-2 w-[full] items-center'>
-                <div className='flex h-auto gap-2 flex-col justify-between'>
-                  <div className='flex w-full items-center justify-between'>
-                    <h1>Size</h1>
-                    <ChevronUp strokeWidth={1} />
-                  </div>
-                  <div className='space-x-1 space-y-1'>
-                    {[
-                      'XX-Small',
-                      'X-Small',
-                      'Small',
-                      'Medium',
-                      'Large',
-                      'X-Large',
-                      'XX-Large',
-                      '3X-Large',
-                      '4X-Large'
-                    ].map(size => (
-                      <Btn
-                        key={size}
-                        name={size}
-                        classname='md:w-[88px] w-[76px] md:h-[39px] h-[39px] md:text-base text-sm bg-gray-200 text-black hover:bg-black hover:text-white transition duration-500 active:bg-black'
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
+                        {/* Size filtration */}
+                        <div className='flex h-auto w-[full] items-center gap-2'>
+                          <div className='flex h-auto flex-col justify-between gap-2'>
+                            <div className='flex w-full items-center justify-between'>
+                              <h1>Size</h1>
+                              <ChevronUp strokeWidth={1} />
+                            </div>
+                            <div className='space-x-1 space-y-1'>
+                              {[
+                                'XX-Small',
+                                'X-Small',
+                                'Small',
+                                'Medium',
+                                'Large',
+                                'X-Large',
+                                'XX-Large',
+                                '3X-Large',
+                                '4X-Large'
+                              ].map(size => (
+                                <Btn
+                                  key={size}
+                                  name={size}
+                                  classname='md:w-[88px] w-[76px] md:h-[39px] h-[39px] md:text-base text-sm bg-gray-200 text-black hover:bg-black hover:text-white transition duration-500 active:bg-black'
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
 
-              {/* Dress Style FIlter */}
-              <div className='flex h-[219px] w-full items-center'>
-                <div className='flex h-[171px] w-full flex-col justify-between'>
-                  <div className='flex w-full items-center justify-between'>
-                    <h1>Dress Style</h1>
-                    <ChevronUp strokeWidth={1} />
-                  </div>
-                  <div className='flex h-[124px] w-full justify-between'>
-                    <div className='flex flex-col justify-evenly'>
-                      <Link href='#'>T-Shirts</Link>
-                      <Link href='#'>Shorts</Link>
-                      <Link href='#'>Shirts</Link>
-                      <Link href='#'>Hoodeis</Link>
+                        {/* Dress Style FIlter */}
+                        <div className='flex h-[219px] w-full items-center'>
+                          <div className='flex h-[171px] w-full flex-col justify-between'>
+                            <div className='flex w-full items-center justify-between'>
+                              <h1>Dress Style</h1>
+                              <ChevronUp strokeWidth={1} />
+                            </div>
+                            <div className='flex h-[124px] w-full justify-between'>
+                              <div className='flex flex-col justify-evenly'>
+                                <Link href='#'>T-Shirts</Link>
+                                <Link href='#'>Shorts</Link>
+                                <Link href='#'>Shirts</Link>
+                                <Link href='#'>Hoodeis</Link>
+                              </div>
+                              <div className='flex flex-col justify-evenly'>
+                                <ChevronRight strokeWidth={1} />
+                                <ChevronRight strokeWidth={1} />
+                                <ChevronRight strokeWidth={1} />
+                                <ChevronRight strokeWidth={1} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* APply FIlter Button */}
+                        <div className='flex h-[96px] items-center'>
+                          <Btn
+                            name='Apply Filter'
+                            classname='text-white md:w-[247px] h-[48px]'
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className='flex flex-col justify-evenly'>
-                      <ChevronRight strokeWidth={1} />
-                      <ChevronRight strokeWidth={1} />
-                      <ChevronRight strokeWidth={1} />
-                      <ChevronRight strokeWidth={1} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* APply FIlter Button */}
-              <div className='flex h-[96px] items-center'>
-                <Btn
-                  name='Apply Filter'
-                  classname='text-white md:w-[247px] h-[48px]'
-                />
-              </div>
-            </div>
-          </div>
                   </PopoverContent>
                 </Popover>
               </div>
