@@ -20,6 +20,7 @@ import {
   PopoverContent,
   PopoverTrigger
 } from '@/components/ui/popover'
+import Breadcrumb from '../component/breadcrumb'
 
 const SwiperSlideContext = createContext<any>(null)
 
@@ -34,7 +35,7 @@ export default function Casual() {
       <section className='m-auto h-[1500px] md:w-[1240px]'>
         {/* top links heading display */}
         <div>
-          <h1>Home {'>'} Casual</h1>
+          <div><Breadcrumb/></div>
         </div>
         {/* main box */}
         <div className='flex w-full'>

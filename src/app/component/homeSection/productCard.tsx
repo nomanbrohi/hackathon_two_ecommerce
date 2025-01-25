@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { getAllProducts } from '@/sanity/lib/data'
+import { IProduct } from '@/sanity/lib/data'
 
 // import { useRouter } from 'next/navigation'
 
