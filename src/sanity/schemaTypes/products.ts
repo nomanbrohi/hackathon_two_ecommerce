@@ -1,3 +1,4 @@
+import { Rule } from "postcss"
 import { defineType } from "sanity"
 
 export default defineType({
@@ -45,8 +46,23 @@ export default defineType({
                    {title: 'Jeans', value: 'jeans'} ,
                    {title: 'Hoddie', value: 'hoodie'} ,
                    {title: 'Shirt', value: 'shirt'} ,
+                   {title: 'New Arrival', value: 'newArrival'},
+                   {title: 'Top Selling', value: 'topSelling'},
                 ]
             }
+        },
+        {
+            name:"specialCategory",
+            title:"special Category",
+            type:"string",
+            options:{
+                list:[
+                    {title:"New Arrival", value:"newArrival"},
+                    {title:"Top Selling", value:"topSelling"},
+                ],
+                layout:"dropdown"
+            },
+
         },
         {
             name:"discountPercent",
@@ -65,6 +81,12 @@ export default defineType({
             of:[
                 {type: 'string'}
             ]
+        },
+        {
+            name:"rating",
+            title:"Rating",
+            type:"number",
+            validation:Rule =>Rule.min(0).max(5)
         },
         {
             name:"sizes",

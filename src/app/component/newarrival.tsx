@@ -1,34 +1,45 @@
 'use client'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Key } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { createContext } from 'react'
 import Link from 'next/link'
-import { getAllProducts } from '@/sanity/lib/data' // Import the getAllProducts function
+import { getAllProducts } from '@/sanity/lib/data'
 import { IProduct } from '@/sanity/lib/data'
 
+// interface Product {
+//   id: string
+//   name: string
+//   image: string
+//   rating: number // Average rating (e.g., 4.5)
+//   price: string // Current price
+//   discount?: string // Discounted price (if applicable)
+//   oldPrice?: string // Old price (if applicable)
+//   description: string
+// }
 const SwiperSlideContext = createContext<any>(null)
 
-export default function NewArrival() {
+export default function TopSelling() {
   const [products, setProducts] = useState<IProduct[]>([])
-  const [loading, setLoading] = useState<boolean>(true)  // Loading state
-  const [error, setError] = useState<string | null>(null) // Error state
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await getAllProducts() // Use the Sanity API function
-        if (data && data.length > 0) {
-          setProducts(data)
+        const { newArrivalProducts, allProducts, topSellingProducts } =
+          await getAllProducts()
+        if (newArrivalProducts && newArrivalProducts.length > 0) {
+          setProducts(newArrivalProducts)
         } else {
-          setError('No products found')
+          setError('No Products found')
         }
       } catch (err) {
-        console.error('Error fetching products:', err)
-        setError('Failed to load products')
+        console.error('Error fetching products: ', err)
+        setError('Failed to Load Products')
       } finally {
         setLoading(false)
       }
@@ -41,11 +52,9 @@ export default function NewArrival() {
   if (loading) {
     return <div>Loading...</div>
   }
-
   if (error) {
     return <div>{error}</div>
   }
-
   return (
     <>
       <section>
@@ -63,34 +72,61 @@ export default function NewArrival() {
               }}
               className='w-full md:w-[1240px]'
             >
-              {products.map((product) => (
+              {products.map(product => (
                 <SwiperSlide key={product._id}>
-                  <Link href={`/productdetails/${product._id}`}>
+                  <Link href={`productdetails/${product._id}`}>
                     <div className='m-auto w-[295px] rounded-md transition duration-300 hover:shadow-lg'>
-                      <div>
-                        {product.imageUrl ? (
-                          <Image
-                            src={product.imageUrl}
-                            alt={product.name}
-                            width={295}
-                            height={298}
-                            className='h-[298px] w-full rounded-2xl object-cover'
-                            loading='lazy'
-                          />
-                        ) : (
-                          <div className="h-[298px] w-full bg-gray-200 rounded-2xl flex items-center justify-center">
-                            <span>No Image Available</span>
-                          </div>
-                        )}
+                      <div key={product._id}>
+                        <Image
+                          src={product.imageUrl}
+                          alt={product.name}
+                          width={295}
+                          height={298}
+                          className='h-[298px] w-full rounded-2xl object-cover'
+                        />
+                        {/* Product Name */}
                         <h3 className='mt-2 text-xl font-medium'>
                           {product.name}
                         </h3>
+
+                        {/* Star Rating*/}
+                        <div className='mt-1 flex items-center space-x-2'>
+                          <div className='flex'>
+                            {Array.from({ length: 5 }, (_, i) => (
+                              <svg
+                                key={i}
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill={
+                                  i < Math.floor(product.rating)
+                                    ? 'gold'
+                                    : 'gray'
+                                }
+                                viewBox='0 0 24 24'
+                                width='16'
+                                height='16'
+                                className='mr-1'
+                              >
+                                <path d='M12 2.49l3.09 6.26 6.91 1-5 4.87 1.18 6.88-6.18-3.25L6.82 21.5l1.18-6.88-5-4.87 6.91-1L12 2.49z' />
+                              </svg>
+                            ))}
+                          </div>
+                          <p className='text-sm text-gray-500'>
+                            {product.rating
+                              ? product.rating.toFixed(1)
+                              : 'No rating yet'}
+                            /5
+                          </p>
+                        </div>
+
+                        {/* Price and Discount */}
                         <div className='mt-2 space-x-2'>
                           <span className='text-lg font-bold text-black'>
+                            Rs:{' '}
                             {product.discountPercent
                               ? (
-                                product.price - (product.price * 16 / 100)
-                              ).toFixed(0)
+                                  product.price -
+                                  (product.price * 16) / 100
+                                ).toFixed(0)
                               : product.price}
                           </span>
 

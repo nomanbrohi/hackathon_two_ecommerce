@@ -9,19 +9,20 @@ import { Check } from 'lucide-react'
 import { useCart } from '@/app/context/cartcontext'
 import { getAllProducts } from '@/sanity/lib/data'
 import { Item } from '@radix-ui/react-navigation-menu'
-
-interface IProduct {
-  _id: string
-  name: string
-  price: number
-  description: string
-  imageUrl: string
-  category: string
-  discountPercent: number
-  new: boolean | null
-  colors: string[]
-  sizes: string[]
-}
+import { IProduct } from '@/sanity/lib/data'
+// interface IProduct {
+//   _id: string
+//   name: string
+//   price: number
+//   description: string
+//   imageUrl: string
+//   category: string
+//   discountPercent: number
+//   galleryUrl?: string[]
+//   new: boolean | null
+//   colors: string[]
+//   sizes: string[]
+// }
 
 export default function ProductDetails() {
   const params = useParams(); // Access dynamic route parameters here
@@ -57,6 +58,7 @@ export default function ProductDetails() {
       quantity: 1,
       selectedSize,
       selectedColor,
+      galleryUrls,
       image: product?.imageUrl,
     };
   
@@ -67,11 +69,11 @@ export default function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-             const products = await getAllProducts();
-        console.log("Fetched products:", products);
+             const { allProducts, newArrivalProducts, topSellingProducts } = await getAllProducts();
+        console.log("Fetched products:", allProducts);
         console.log("Product ID from URLLLLL:", params.id); // Log the fetched ID to confirm
 
-        const selectedProduct = products.find(
+        const selectedProduct = allProducts.find(
           (item: { _id: string }) =>
             item._id === params.id // Match the product ID with the URL
         );
@@ -100,7 +102,7 @@ export default function ProductDetails() {
     return <div>Product not found.</div>;
   }
 
-  const { _id, imageUrl, colors, sizes, name, price, discountPercent } = product;
+  const { _id,galleryUrls,imageUrl, colors, sizes, name, price, discountPercent } = product;
   // Render your product details here
 
   return (
@@ -109,7 +111,7 @@ export default function ProductDetails() {
         {/* Left Section: Images */}
         <div className="flex w-full flex-col-reverse gap-3 md:w-[610px] md:flex-row">
           <div className="grid grid-cols-3 gap-x-4  md:grid-cols-[152px] md:gap-y-4">
-            {[imageUrl].map(
+            {galleryUrls?.map(
               (src, index) =>
                 src && (
                   <Image
